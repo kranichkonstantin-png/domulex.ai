@@ -1,0 +1,53 @@
+DOMULEX VOLLSTÄNDIGKEITS-DATENBANK
+Kompakte Dokumentenliste für verbleibende 243 Dokumente
+
+Diese Datei enthält die Meta-Daten für alle fehlenden Rechtsquellen.
+Die Implementierung erfolgt programmatisch im complete_expansion_scraper.py
+
+BGB KAUFRECHT (45): ✅ ERSTELLT OBEN
+ERBSTG (10): ✅ ERSTELLT OBEN  
+GBO (25): ✅ ERSTELLT
+
+BEWG (10):
+§ 176, 177, 182, 189, 218, 219, 220, 221, 222, 228
+
+BMF ERGÄNZUNG (5):
+§ 35a EStG, § 7g EStG, § 6 Abs.5 EStG, Grundsteuer 2025, FESTUCA-Verfahren
+
+BAUGB (40):
+§§ 1-13 Bauleitplanung, 29-38 Zulässigkeit, 39-84 Umlegung, 123-135 Wertermittlung, 136-164 Sanierung, 176-191 Milieuschutz
+
+VOB/B (15):
+§§ 1, 2, 4, 5, 6, 8, 12, 13, 15, 16, 17, 18 VOB/B
+
+HOAI (15):
+§§ 3, 7, 34, 35, 40-50, Anlage 10 Honorartafeln
+
+WEG ERWEITERT (31):
+§§ 9-10, 13-16, 18-24, 26, 28 WEG  
+
+GEG ERWEITERT (42):
+§§ 1-20 Neubau, 21-46 Bestand, 47-53 Sanierung, 71-72 Austauschpflicht, 80-105 Bußgeld
+
+MAKLERRECHT (15):
+§§ 652-656 BGB, § 34c GewO, §§ 1-6 WoVermRG, MaBV
+
+MIETPREISBREMSE (10):
+§§ 556d-556g BGB
+
+ZVG (30):
+§§ 1-20, 37-85, 114-161 ZVG
+
+BGH ERWEITERT (20):
+10 Werkvertragsrecht + 10 Grundstücksrecht
+
+BVERWG (10):
+Baurecht Verwaltungsgerichtshof
+
+BFG (5):
+Grundsteuer Finanzgericht
+
+GESAMT: 243 Dokumente
+BEREITS IMPLEMENTIERT: 60 (BGB Sachenrecht 35 + GBO 25)
+ZIEL: 821 + 243 = 1.064 Dokumente
+

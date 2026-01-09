@@ -1,0 +1,59 @@
+/Users/konstantinkranich/domulex.ai/seed_gesetze_komplett.py:9: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+🚀 GESETZE-VERVOLLSTÄNDIGUNG
+======================================================================
+📊 Start: 5200
+
+🏗️  BauGB KOMPLETT +246 §§...
+   50/246 (§ 53)
+   100/246 (§ 103)
+   150/246 (§ 153)
+   200/246 (§ 203)
+
+🏘️  BauNVO +23 §§...
+
+⚖️  ZVG +100 §§...
+
+💰 InsO +50 §§...
+
+📋 AO +100 §§...
+
+🌳 Umweltrecht +165 §§...
+
+⚠️  WiStG +3 §§...
+
+🔨 VOB/B +18 §§...
+
+⬆️  Uploading 739 §§...
+   Batch 1/4 (200 §§)
+   Batch 2/4 (200 §§)
+   Batch 3/4 (200 §§)
+   Batch 4/4 (139 §§)
+
+======================================================================
+✅ GESETZE KOMPLETT!
+======================================================================
+📊 Vorher:  5200 Dokumente
+📊 JETZT:   6706 Dokumente
+📊 NEU:     +739 Gesetzes-§§
+
+📜 NEUE GESETZE:
+   • BauGB KOMPLETT (+246 §§)
+   • BauNVO (+23 §§)
+   • ZVG (+100 §§)
+   • InsO (+50 §§)
+   • AO (+100 §§)
+   • BNatSchG (+50 §§)
+   • BBodSchG (+25 §§)
+   • WHG (+50 §§)
+   • BImSchG (+40 §§)
+   • WiStG (+3 §§)
+   • VOB/B (+18 §§)
+======================================================================

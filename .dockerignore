@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backend files (not needed in frontend container)
+backend/
+functions/
+data/
+nginx/
+
+# Node modules
+node_modules/
+package-lock.json
+
+# Firebase
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+
+# Git
+.git/
+.gitignore
+
+# Documentation (optional - remove if you want docs in container)
+*.md
+!README.md
+
+# Old files
+frontend_app_old.py
+*.old
+*.backup
+
+# Test files
+tests/
+test_*.py
+*_test.py
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Logs
+*.log
+logs/
+
+# Environment files (secrets should be injected at runtime)
+.env
+.env.*

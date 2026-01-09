@@ -1,18 +1,108 @@
-rules_version='2'
+rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    
+    // Admin emails
+    function isAdmin() {
+      return request.auth != null && request.auth.token.email in ['kontakt@domulex.ai', 'admin@domulex.ai'];
+    }
+    
+    // Users collection - users can only read/write their own data
+    match /users/{userId} {
+      // Allow users to read their own data
+      allow read: if request.auth != null && request.auth.uid == userId;
+      
+      // Allow users to create their own user document
+      allow create: if request.auth != null && request.auth.uid == userId;
+      
+      // Allow users to update their own data (except tier and limits)
+      allow update: if request.auth != null 
+                    && request.auth.uid == userId
+                    && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['tier', 'queriesLimit', 'stripeCustomerId', 'stripeSubscriptionId']);
+      
+      // Only admins can delete user accounts
+      allow delete: if isAdmin();
+      
+      // Admins can read and write all user data
+      allow read, write: if isAdmin();
+      
+      // Managed Documents subcollection - users can manage their own documents
+      match /managed_documents/{docId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+        allow read, write: if isAdmin();
+      }
+      
+      // Custom Templates subcollection - users can manage their own templates
+      match /custom_templates/{templateId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+        allow read, write: if isAdmin();
+      }
+      
+      // Objekte subcollection - users can manage their own properties
+      match /objekte/{objektId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+        allow read, write: if isAdmin();
+      }
+      
+      // Generated Documents subcollection - users can manage their own documents
+      match /generated_documents/{docId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+        allow read, write: if isAdmin();
+      }
+      
+      // CRM Clients subcollection - users can manage their own clients
+      match /crm_clients/{clientId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+        allow read, write: if isAdmin();
+      }
+      
+      // Deadlines subcollection - users can manage their own deadlines
+      match /deadlines/{deadlineId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+        allow read, write: if isAdmin();
+      }
+      
+      // Nebenkostenabrechnungen subcollection - users can manage their own
+      match /nebenkostenabrechnungen/{abrechnungId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+        allow read, write: if isAdmin();
+      }
+    }
+    
+    // Notifications collection - users can read/update their own, admins can write
+    match /notifications/{notificationId} {
+      // Users can read their own notifications
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      
+      // Users can update their own notifications (mark as read)
+      allow update: if request.auth != null && resource.data.userId == request.auth.uid;
+      
+      // Users can delete their own notifications
+      allow delete: if request.auth != null && resource.data.userId == request.auth.uid;
+      
+      // Admins can create notifications for any user
+      allow create: if isAdmin();
+      
+      // Admins can read/write all notifications
+      allow read, write: if isAdmin();
+    }
+    
+    // Subscriptions collection - read-only for users, write for backend
+    match /subscriptions/{subscriptionId} {
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow write: if false; // Only backend can write
+    }
+    
+    // Delete requests - users can create, only admins can read/update/delete
+    match /delete_requests/{requestId} {
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow read, update, delete: if isAdmin();
+    }
+    
+    // Deny all other access
     match /{document=**} {
-      // This rule allows anyone with your database reference to view, edit,
-      // and delete all data in your database. It is useful for getting
-      // started, but it is configured to expire after 30 days because it
-      // leaves your app open to attackers. At that time, all client
-      // requests to your database will be denied.
-      //
-      // Make sure to write security rules for your app before that time, or
-      // else all client requests to your database will be denied until you
-      // update your rules.
-      allow read, write: if request.time < timestamp.date(2026, 1, 25);
+      allow read, write: if false;
     }
   }
 }

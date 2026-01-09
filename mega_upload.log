@@ -1,0 +1,31 @@
+/Users/konstantinkranich/domulex.ai/mega_batch_loader.py:6: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+🚀 MEGA BATCH LOADER - Hochgeschwindigkeits-Upload
+======================================================================
+📊 Start: 942 Dokumente
+
+📦 1803 Gesetzestexte vorbereitet
+
+⚡ Starte Upload in 37 Batches à 50 Dokumente
+
+  ✅ Batch 5/37 - 1192 Dokumente total
+  ✅ Batch 10/37 - 1442 Dokumente total
+  ✅ Batch 15/37 - 1692 Dokumente total
+  ✅ Batch 20/37 - 1942 Dokumente total
+  ✅ Batch 25/37 - 2192 Dokumente total
+  ✅ Batch 30/37 - 2442 Dokumente total
+  ✅ Batch 35/37 - 2692 Dokumente total
+  ✅ Batch 37/37 - 2745 Dokumente total
+
+======================================================================
+🎉 FERTIG!
+📊 Vorher: 942 | Nachher: 2745
+➕ Zuwachs: +1803
+✅ Erfolg: 1803 | ❌ Fehler: 0
