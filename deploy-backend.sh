@@ -19,14 +19,17 @@ REGION="europe-west3"
 SERVICE_NAME="domulex-backend"
 
 # Stripe Produktions-Konfiguration
-STRIPE_SECRET_KEY="sk_test_51S402X3LV15CfXas2kijjWnds3sXPaTdlAK2FnftPefB9jzZY5vobXtwhiM82H0ExlG8aDeOZFod7kGdozs9FhD00SdyPgtgA"
-STRIPE_WEBHOOK_SECRET="whsec_nqf6ggVHJO7rBorY5xZzWLRuYNT00JUV"
+# ⚠️ SECRETS AUS GOOGLE CLOUD SECRET MANAGER LADEN
+# Setze diese Werte über: gcloud secrets oder .env.local (NICHT committen!)
+STRIPE_SECRET_KEY="${STRIPE_SECRET_KEY:-}"
+STRIPE_WEBHOOK_SECRET="${STRIPE_WEBHOOK_SECRET:-}"
 STRIPE_PRICE_TENANT="price_1Sj8l83LV15CfXasN3zUqv2v"      # Basis: 19€/Monat
 STRIPE_PRICE_PRO="price_1Siuom3LV15CfXasXmpE2LCt"         # Professional: 39€/Monat
 STRIPE_PRICE_LAWYER="price_1Siutl3LV15CfXas4Mxel6SS"      # Lawyer Pro: 69€/Monat
 
 # Gemini & Qdrant
-GEMINI_API_KEY="AIzaSyDHb8dTwM-jpr5k7GPCVuQbfon38tckOls"
+# ⚠️ AUCH GEMINI KEY SOLLTE AUS SECRET MANAGER KOMMEN
+GEMINI_API_KEY="${GEMINI_API_KEY:-}"
 QDRANT_HOST="domulex-qdrant-841507936108.europe-west3.run.app"
 QDRANT_USE_HTTPS="true"
 

@@ -211,7 +211,8 @@ gcloud run deploy domulex-backend \
   --source . \
   --region=europe-west3 \
   --allow-unauthenticated \
-  --update-env-vars="STRIPE_SECRET_KEY=sk_test_51S402X3LV15CfXas2kijjWnds3sXPaTdlAK2FnftPefB9jzZY5vobXtwhiM82H0ExlG8aDeOZFod7kGdozs9FhD00SdyPgtgA,STRIPE_WEBHOOK_SECRET=whsec_nqf6ggVHJO7rBorY5xZzWLRuYNT00JUV,STRIPE_PRICE_TENANT=price_1Sj8l83LV15CfXasN3zUqv2v,STRIPE_PRICE_PRO=price_1Siuom3LV15CfXasXmpE2LCt,STRIPE_PRICE_LAWYER=price_1Siutl3LV15CfXas4Mxel6SS"
+  --set-secrets="STRIPE_SECRET_KEY=stripe-secret-key:latest,STRIPE_WEBHOOK_SECRET=stripe-webhook-secret:latest" \
+  --set-env-vars="STRIPE_PRICE_TENANT=price_1Sj8l83LV15CfXasN3zUqv2v,STRIPE_PRICE_PRO=price_1Siuom3LV15CfXasXmpE2LCt,STRIPE_PRICE_LAWYER=price_1Siutl3LV15CfXas4Mxel6SS"
 ```
 
 ### 3. Webhook konfigurieren
